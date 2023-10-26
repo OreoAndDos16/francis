@@ -1,7 +1,25 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = "My Blog";
+
+const identity = {
+  firstName: "Lyka",
+  country: "Philippines",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+const skillColor = "navy";
 ---
-<div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-  </div>
+<div transition:animate="slide" class="nav-links">
+  <a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/blog/">Blog</a>
+<a href="/tags/">Tags</a>
+</div>
