@@ -1,7 +1,15 @@
 ---
+import BaseLayout from '../layouts/Baselayout.astro'
+const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "My Astro Learning Blog";
-import Footer from '../components/Footer.astro';
 ---
+<BaseLayout pageTitle={pageTitle}>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+
+    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
+</BaseLayout>
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
@@ -21,7 +29,6 @@ import Footer from '../components/Footer.astro';
       <li><a href="/posts/post-2/">Post 2</a></li>
       <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
-    <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
