@@ -1,23 +1,29 @@
 ---
+import BaseLayout from '../layouts/Baselayout.astro';
 const pageTitle = "Home Page";
 ---
-<a href="/">Home</a>
-<a href="/about/">About</a>
-
-<h1>About Me</h1>
-<h2>... and my new Astro site!</h2>
-
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home Page</title>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<h1>My Astro Site</h1>
-	  </body>
+  </head>
+  <body>
+    <Navigation />
+    <h1>{pageTitle}</h1>
+	<Footer />
+	<script>
+	  document.querySelector('.hamburger').addEventListener('click', () => {
+		document.querySelector('.nav-links').classList.toggle('expanded');
+	  });
+  
+	  import "../scripts/menu.js";
+	</script>
+  </body>
+  </body>
 </html>
