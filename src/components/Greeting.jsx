@@ -1,4 +1,6 @@
-import { useState } from 'preact/hooks';
+
+import preact from "@astrojs/preact";
+
 
 export default function Greeting({messages}) {
 
